@@ -1,49 +1,57 @@
 export default {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
-    const corsHeaders = {
-      'Access-Control-Allow-Origin': '*',
-      'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
-      'Access-Control-Allow-Headers': 'Content-Type, Authorization',
-    };
 
-    if (request.method === 'OPTIONS') {
-      return new Response(null, { headers: corsHeaders });
+    // Handle CORS preflight requests if needed
+    if (request.method === "OPTIONS") {
+      return new Response(null, {
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
+          "Access-Control-Allow-Headers": "Content-Type",
+        },
+      });
     }
 
-    try {
-      // Endpoint to view all digital products from your D1 database
-      if (url.pathname === '/api/products' && request.method === 'GET') {
-        const { results } = await env.DB.prepare("SELECT * FROM products ORDER BY created_at DESC").all();
-        return jsonResponse({ success: true, products: results }, 200, corsHeaders);
-      }
+    // GET /products - Fetch all products
+    if (url.pathname === "/products" && request.method === "GET") {
+      try {
+        const { results } = await env.DB.prepare(
+          "SELECT * FROM products ORDER BY created_at DESC"
+        ).all();
 
-      // Endpoint to add a product or log a purchase
-      if (url.pathname === '/api/products' && request.method === 'POST') {
+        return Response.json(results, {
+          headers: { "Access-Control-Allow-Origin": "*" },
+        });
+      } catch (err) {
+        return Response.json({ error: err.message }, { status: 500 });
+      }
+    }
+
+    // POST /products - Add a new product
+    if (url.pathname === "/products" && request.method === "POST") {
+      try {
         const body = await request.json();
-        
-        if (!body.id || !body.name || !body.price) {
-          return jsonResponse({ success: false, error: 'Missing required fields: id, name, price' }, 400, corsHeaders);
+
+        // Fixed validation: checks if price is explicitly undefined/null rather than treating 0 as falsy
+        if (!body.id || !body.name || body.price === undefined || body.price === null) {
+          return Response.json({ error: "Missing required fields (id, name, price)" }, { status: 400 });
         }
 
         await env.DB.prepare(
           "INSERT INTO products (id, name, price) VALUES (?, ?, ?)"
-        ).bind(body.id, body.name, body.price).run();
+        )
+          .bind(body.id, body.name, body.price)
+          .run();
 
-        return jsonResponse({ success: true, message: 'Product recorded successfully' }, 201, corsHeaders);
+        return Response.json({ success: true }, {
+          headers: { "Access-Control-Allow-Origin": "*" },
+        });
+      } catch (err) {
+        return Response.json({ error: err.message }, { status: 500 });
       }
-
-      return jsonResponse({ error: 'Endpoint not found' }, 404, corsHeaders);
-
-    } catch (err) {
-      return jsonResponse({ success: false, error: err.message }, 500, corsHeaders);
     }
-  }
-};
 
-function jsonResponse(data, status = 200, headers = {}) {
-  return new Response(JSON.stringify(data), {
-    status,
-    headers: { 'Content-Type': 'application/json', ...headers }
-  });
-}
+    return new Response("Not Found", { status: 404 });
+  },
+};
