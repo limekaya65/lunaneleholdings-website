@@ -1,0 +1,8 @@
+name = "lunaneleholdings-website"
+main = "worker.js"
+compatibility_date = "2026-11-11"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "lunanele-products-db"
+database_id = "734b24ca-0af8-4339-b01e-f0baa92e9a83"
