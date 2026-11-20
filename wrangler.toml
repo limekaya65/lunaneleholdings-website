@@ -2,6 +2,12 @@ name = "lunaneleholdings-website"
 main = "worker.js"
 compatibility_date = "2026-11-11"
 
+# Serves everything in ./public (index.html, logo, sitemap) as the website.
+# Requests that don't match a file fall through to worker.js (API routes).
+[assets]
+directory = "./public"
+binding = "ASSETS"
+
 [[d1_databases]]
 binding = "DB"
 database_name = "lunanele-products-db"
