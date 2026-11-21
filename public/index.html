@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lunanele Holdings | South African Holding Group</title>
+<meta name="description" content="Lunanele Holdings Pty Ltd is a South African holding group with five wholly-owned subsidiaries in capital, technology, infrastructure, agribusiness and financial markets. Start a conversation with us.">
+<link rel="canonical" href="https://lunaneleholdings.com/">
+<link rel="icon" href="logo.jpg">
+<meta property="og:title" content="Lunanele Holdings">
+<meta property="og:description" content="A South African holding group building long-term value across five sectors.">
+<meta property="og:image" content="https://lunaneleholdings.com/logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#050c1f;--ink2:#0b1630;--line:rgba(201,162,39,.22);--gold:#c9a227;--glint:#e8c84a;--fog:#8a9ab5;--text:#e6ebf4;--serif:'Cormorant Garamond',Georgia,serif;--sans:'Outfit',system-ui,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--ink);color:var(--text);font:400 17px/1.65 var(--sans);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+h1,h2{font-family:var(--serif);font-weight:500;line-height:1.1;letter-spacing:-.01em}
+h1{font-size:clamp(2.6rem,6vw,4.4rem)}
+h2{font-size:clamp(2rem,4vw,2.8rem);margin-bottom:14px}
+.eyebrow{color:var(--gold);font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;font-weight:500;margin-bottom:14px}
+.lead{color:var(--fog);font-size:1.1rem;max-width:620px}
+.btn{display:inline-block;background:var(--gold);color:var(--ink);font-weight:600;padding:15px 28px;border-radius:6px;text-decoration:none;border:0;font-size:1rem;cursor:pointer;transition:background .2s}
+.btn:hover{background:var(--glint)}
+.btn.ghost{background:transparent;color:var(--text);border:1px solid var(--line)}
+.btn.ghost:hover{border-color:var(--gold)}
+/* nav */
+nav{position:sticky;top:0;z-index:10;background:rgba(5,12,31,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:68px}
+.brand{white-space:nowrap;display:flex;align-items:center;gap:10px;text-decoration:none;font-family:var(--serif);font-size:1.3rem}
+.brand img{width:36px;height:36px;border-radius:50%}
+nav .links{display:flex;gap:26px;align-items:center;font-size:.95rem}
+nav .links a{text-decoration:none;color:var(--fog)}
+nav .links a:hover{color:var(--text)}
+nav .links .btn{color:var(--ink);padding:10px 18px}
+@media(max-width:720px){nav .links a:not(.btn){display:none}.brand{font-size:1.1rem}nav .links .btn{padding:9px 14px;font-size:.9rem}header.hero{padding:56px 0 64px}}
+/* sections */
+section{padding:96px 0;border-bottom:1px solid var(--line)}
+.hero{padding:120px 0 104px;background:radial-gradient(ellipse at 70% 0%,rgba(201,162,39,.12),transparent 60%)}
+.hero p.lead{margin:22px 0 36px}
+.hero .ctas{display:flex;gap:14px;flex-wrap:wrap}
+.facts{display:flex;gap:32px;flex-wrap:wrap;margin-top:56px;color:var(--fog);font-size:.9rem}
+.facts b{display:block;color:var(--text);font-weight:500}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin-top:44px}
+.card{background:var(--ink2);border:1px solid var(--line);border-radius:10px;padding:26px}
+.card h3{font-family:var(--serif);font-size:1.5rem;font-weight:500;margin-bottom:6px}
+.card .tag{color:var(--gold);font-size:.75rem;letter-spacing:.14em;text-transform:uppercase}
+.card p{color:var(--fog);font-size:.97rem;margin-top:8px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.chips span{border:1px solid var(--line);border-radius:99px;padding:7px 15px;font-size:.9rem;color:var(--fog)}
+.steps{counter-reset:s;display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));margin-top:44px}
+.steps div{counter-increment:s;border-top:2px solid var(--gold);padding-top:18px}
+.steps div::before{content:"0" counter(s);color:var(--gold);font-family:var(--serif);font-size:1.6rem;display:block}
+.steps h3{font-weight:500;font-size:1.08rem;margin:6px 0}
+.steps p{color:var(--fog);font-size:.95rem}
+/* contact */
+.contact{display:grid;gap:48px;grid-template-columns:1fr 1.2fr;align-items:start}
+@media(max-width:820px){.contact{grid-template-columns:1fr}}
+.alt{margin-top:28px;display:grid;gap:14px;font-size:.97rem}
+.alt a{color:var(--glint)}
+.alt small{display:block;color:var(--fog);font-size:.8rem;letter-spacing:.1em;text-transform:uppercase}
+form{background:var(--ink2);border:1px solid var(--line);border-radius:12px;padding:28px;display:grid;gap:16px}
+label{font-size:.88rem;color:var(--fog);display:grid;gap:6px}
+input,select,textarea{font:inherit;font-size:1rem;color:var(--text);background:var(--ink);border:1px solid rgba(138,154,181,.3);border-radius:6px;padding:12px 14px;width:100%}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--gold)}
+textarea{min-height:130px;resize:vertical}
+.hp{position:absolute;left:-9999px}
+#status{font-size:.95rem;min-height:1.4em}
+#status.err{color:#ff8a80}
+.ok{text-align:center;padding:40px 10px}
+.ok h3{font-family:var(--serif);font-size:1.8rem;font-weight:500;color:var(--glint);margin-bottom:8px}
+footer{padding:40px 0;color:var(--fog);font-size:.85rem}
+footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.wa{position:fixed;right:20px;bottom:20px;width:54px;height:54px;border-radius:50%;background:#25d366;display:grid;place-items:center;box-shadow:0 6px 24px rgba(0,0,0,.35);z-index:20}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="#top"><img src="logo.jpg" alt="" width="36" height="36">Lunanele Holdings</a>
+    <div class="links">
+      <a href="#group">The Group</a>
+      <a href="#how">How to engage</a>
+      <a class="btn" href="#contact">Get in touch</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <p class="eyebrow">South African Holding Group · Est. 2025</p>
+    <h1>Building long-term value across five sectors.</h1>
+    <p class="lead">Lunanele Holdings owns and governs five South African companies in capital, technology, infrastructure, agriculture and financial markets. We partner with investors, development finance institutions, government and businesses that share a long-term view.</p>
+    <div class="ctas">
+      <a class="btn" href="#contact">Start a conversation →</a>
+      <a class="btn ghost" href="#group">See what we do</a>
+    </div>
+    <div class="facts">
+      <div><b>CIPC Reg. 2026/179103/07</b>Registered company</div>
+      <div><b>5 subsidiaries</b>100% group-owned</div>
+      <div><b>Rustenburg</b>North West, South Africa</div>
+    </div>
+  </div>
+</header>
+
+<section id="group">
+  <div class="wrap">
+    <p class="eyebrow">The Group</p>
+    <h2>Five companies. One long-term plan.</h2>
+    <p class="lead">Each subsidiary runs its own sector. The holding company sets direction, governance and capital discipline across all of them.</p>
+    <div class="grid">
+      <div class="card"><span class="tag">Financial Services</span><h3>Lunanele Capital</h3><p>Structures investment, manages treasury and funds the growth of every group company.</p></div>
+      <div class="card"><span class="tag">Technology</span><h3>Lunanele Technology</h3><p>Builds the platforms, security and systems that run the group and serve our clients.</p></div>
+      <div class="card"><span class="tag">Infrastructure &amp; Energy</span><h3>Lunanele Infrastructure</h3><p>Develops civil works, solar and energy systems, and long-life industrial facilities.</p></div>
+      <div class="card"><span class="tag">Agriculture</span><h3>Lunanele Agribusiness</h3><p>Commercial farming, cold chain and agro-processing for South Africa's food supply.</p></div>
+      <div class="card"><span class="tag">Financial Markets</span><h3>Lunanele FX Markets</h3><p>Rules-based trading within strict, pre-set risk limits.</p></div>
+    </div>
+    <p class="eyebrow" style="margin-top:56px">Products &amp; platforms</p>
+    <div class="chips">
+      <span>LunaCore</span><span>FlockSphere 360</span><span>Device Management System</span><span>Luna Cybersecurity System</span><span>Lunanele Security Intelligence Centre</span><span>SMC &amp; CRT Strategy Execution</span>
+    </div>
+  </div>
+</section>
+
+<section id="how">
+  <div class="wrap">
+    <p class="eyebrow">How to engage</p>
+    <h2>From first message to partnership.</h2>
+    <p class="lead">No NDA or commitment is needed to start. Just tell us who you are and what you have in mind.</p>
+    <div class="steps">
+      <div><h3>Send an enquiry</h3><p>Use the short form below or WhatsApp us. It takes about two minutes.</p></div>
+      <div><h3>We reply within 5 business days</h3><p>A principal responds with an overview of the group and any questions.</p></div>
+      <div><h3>Meet and agree terms</h3><p>If there is a fit, we sign a mutual NDA, share documents and meet directly.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap contact">
+    <div>
+      <p class="eyebrow">Start a conversation</p>
+      <h2>Tell us what you'd like to build together.</h2>
+      <p class="lead">Investors, partners, government, suppliers and job seekers are all welcome. Every enquiry is read by a principal and handled in confidence.</p>
+      <div class="alt">
+        <div><small>WhatsApp</small><a href="https://wa.me/27634195979?text=Hello%2C%20I%27m%20reaching%20out%20from%20the%20Lunanele%20Holdings%20website." target="_blank" rel="noopener">+27 63 419 5979</a></div>
+        <div><small>Email</small><a href="mailto:info@lunaneleholdings.co.za">info@lunaneleholdings.co.za</a></div>
+        <div><small>Address</small>363 Reutlwile Zone 2, Zinniaville, Rustenburg, North West, 0300</div>
+      </div>
+    </div>
+
+    <form id="enquiry" novalidate>
+      <label>Full name<input name="name" autocomplete="name" required maxlength="120"></label>
+      <label>Email<input name="email" type="email" autocomplete="email" required maxlength="200"></label>
+      <label>Organisation (optional)<input name="organisation" autocomplete="organization" maxlength="160"></label>
+      <label>I'm reaching out about
+        <select name="topic">
+          <option>Investment or funding partnership</option>
+          <option>Business or government partnership</option>
+          <option>Our products and services</option>
+          <option>Supplier or vendor</option>
+          <option>Careers</option>
+          <option>Media</option>
+          <option>Something else</option>
+        </select>
+      </label>
+      <label>Message<textarea name="message" required maxlength="4000" placeholder="A few lines on who you are and what you have in mind."></textarea></label>
+      <input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <button class="btn" type="submit">Send enquiry →</button>
+      <p id="status" role="status"></p>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Lunanele Holdings Pty Ltd · CIPC Reg. 2026/179103/07 · Republic of South Africa</span>
+    <span>Personal information is handled under POPIA and used only to respond to your enquiry.</span>
+  </div>
+</footer>
+
+<a class="wa" href="https://wa.me/27634195979" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A9.8 9.8 0 1 1 12 21.8zm0-21.6A11.8 11.8 0 0 0 1.9 18l-1.7 6 6.2-1.6A11.8 11.8 0 1 0 12 .2z"/></svg>
+</a>
+
+<script>
+const form=document.getElementById('enquiry'),status=document.getElementById('status');
+form.addEventListener('submit',async e=>{
+  e.preventDefault();
+  const d=Object.fromEntries(new FormData(form));
+  status.className='';
+  if(!d.name.trim()||!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(d.email)||d.message.trim().length<10){
+    status.className='err';status.textContent='Please add your name, a valid email and a short message.';return;
+  }
+  const btn=form.querySelector('button');btn.disabled=true;btn.textContent='Sending…';
+  try{
+    const r=await fetch('/api/enquiry',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(d)});
+    if(!r.ok)throw new Error();
+    form.innerHTML='<div class="ok"><h3>Thank you, we have your message.</h3><p class="lead" style="margin:0 auto">A principal will reply within five business days.</p></div>';
+  }catch(_){
+    btn.disabled=false;btn.textContent='Send enquiry →';
+    status.className='err';
+    status.innerHTML='Sorry, that didn\'t go through. Please <a href="https://wa.me/27634195979" target="_blank" rel="noopener">WhatsApp us</a> or email <a href="mailto:info@lunaneleholdings.co.za">info@lunaneleholdings.co.za</a>.';
+  }
+});
+</script>
+</body>
+</html>
