@@ -3,7 +3,10 @@
 // This worker only handles the API routes below.
 
 const json = (data, status = 200) =>
-  Response.json(data, { status, headers: { "Cache-Control": "no-store" } });
+  Response.json(data, {
+    status,
+    headers: { "Cache-Control": "no-store", "X-Content-Type-Options": "nosniff", "X-Frame-Options": "DENY" },
+  });
 
 const isAdmin = (request, env) => {
   const auth = request.headers.get("Authorization") || "";
@@ -12,8 +15,29 @@ const isAdmin = (request, env) => {
 
 const clean = (v, max) => String(v ?? "").trim().slice(0, max);
 
+// Strip anything that could be read as HTML before it goes into an email.
+const plain = (v) => String(v).replace(/[<>&"']/g, (c) => ({ "<": "&lt;", ">": "&gt;", "&": "&amp;", '"': "&quot;", "'": "&#39;" })[c]);
+
+// Emails relations@ via the lunanele-email worker (service binding, never public internet).
+async function notify(env, e) {
+  if (!env.EMAILER) return;
+  try {
+    await env.EMAILER.fetch("https://lunanele-email/api/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        name: plain(`${e.name}${e.organisation ? " (" + e.organisation + ")" : ""}`),
+        email: plain(e.email),
+        message: plain(`[Website enquiry: ${e.topic || "General"}]\n\n${e.message}`),
+      }),
+    });
+  } catch (err) {
+    console.error("enquiry email failed", err);
+  }
+}
+
 export default {
-  async fetch(request, env) {
+  async fetch(request, env, ctx) {
     const url = new URL(request.url);
 
     // POST /api/enquiry — public contact form
@@ -36,6 +60,14 @@ export default {
         return json({ error: "Please provide your name, a valid email and a message." }, 400);
       }
 
+      // Spam limits: 3 per sender per hour, 60 site-wide per hour.
+      const { results: [lim] } = await env.DB.prepare(
+        "SELECT SUM(email = ?) AS mine, COUNT(*) AS total FROM enquiries WHERE created_at > datetime('now', '-1 hour')"
+      ).bind(email).all();
+      if ((lim?.mine ?? 0) >= 3 || (lim?.total ?? 0) >= 60) {
+        return json({ error: "Too many enquiries. Please try again later or WhatsApp us." }, 429);
+      }
+
       try {
         await env.DB.prepare(
           "INSERT INTO enquiries (name, email, organisation, topic, message, country, user_agent) VALUES (?, ?, ?, ?, ?, ?, ?)"
@@ -46,6 +78,7 @@ export default {
             clean(request.headers.get("User-Agent"), 300)
           )
           .run();
+        ctx.waitUntil(notify(env, { name, email, organisation, topic, message }));
         return json({ ok: true });
       } catch (err) {
         console.error("enquiry insert failed", err);

@@ -12,3 +12,11 @@ binding = "ASSETS"
 binding = "DB"
 database_name = "lunanele-products-db"
 database_id = "734b24ca-0af8-4339-b01e-f0baa92e9a83"
+
+# Lets the site email new enquiries to relations@ through the lunanele-email worker.
+[[services]]
+binding = "EMAILER"
+service = "lunanele-email"
+
+[observability]
+enabled = true
