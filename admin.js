@@ -36,6 +36,16 @@ const RESOURCES = {
       status: { type: "select", options: ["active", "suspended", "closed"] },
     },
   },
+  subscriptions: {
+    db: "DB", group: "Sales", title: "Subscriptions", pk: "id", order: "started_at DESC",
+    list: ["id", "customer_id", "plan_id", "seats", "status", "started_at"],
+    fields: {
+      customer_id: { type: "ref", ref: "customers", required: true },
+      plan_id: { type: "ref", ref: "plans", required: true },
+      seats: { type: "number" },
+      status: { type: "select", options: ["active", "past_due", "cancelled"] },
+    },
+  },
   invoices: {
     db: "DB", group: "Sales", title: "Invoices", pk: "id", order: "created_at DESC",
     list: ["id", "reference", "customer_id", "billing_entity", "period", "total_zar", "status", "created_at"],
