@@ -51,8 +51,13 @@ section{padding:96px 0;border-bottom:1px solid var(--line)}
 .card h3{font-family:var(--serif);font-size:1.5rem;font-weight:500;margin-bottom:6px}
 .card .tag{color:var(--gold);font-size:.75rem;letter-spacing:.14em;text-transform:uppercase}
 .card p{color:var(--fog);font-size:.97rem;margin-top:8px}
-.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
-.chips span{border:1px solid var(--line);border-radius:99px;padding:7px 15px;font-size:.9rem;color:var(--fog)}
+.card.tech{border-color:rgba(201,162,39,.5)}
+.prods{list-style:none;margin:14px 0 0;border-top:1px solid var(--line)}
+.prods li{border-bottom:1px solid var(--line)}
+.prods a{display:block;padding:9px 0;text-decoration:none;font-size:.95rem}
+.prods a:hover{color:var(--glint)}
+.prods a::after{content:" →";color:var(--gold)}
+.more{display:inline-block;margin-top:14px;color:var(--glint);font-weight:500;font-size:.95rem;text-decoration:none}
 .steps{counter-reset:s;display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));margin-top:44px}
 .steps div{counter-increment:s;border-top:2px solid var(--gold);padding-top:18px}
 .steps div::before{content:"0" counter(s);color:var(--gold);font-family:var(--serif);font-size:1.6rem;display:block}
@@ -116,14 +121,12 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
     <p class="lead">Each subsidiary runs its own sector. The holding company sets direction, governance and capital discipline across all of them.</p>
     <div class="grid">
       <div class="card"><span class="tag">Financial Services</span><h3>Lunanele Capital</h3><p>Structures investment, manages treasury and funds the growth of every group company.</p></div>
-      <div class="card"><span class="tag">Technology</span><h3>Lunanele Technology</h3><p>Builds the platforms, security and systems that run the group and serve our clients.</p></div>
+      <div class="card tech"><span class="tag">Technology</span><h3>Lunanele Technology</h3><p>Builds the platforms, security and systems that run the group and serve our clients.</p>
+        <ul class="prods"><li><a href="https://lunanele-gateway.limekayawelile.workers.dev/products/lunacore">LunaCore</a></li><li><a href="https://lunanele-gateway.limekayawelile.workers.dev/products/flocksphere-360">FlockSphere 360</a></li><li><a href="https://lunanele-gateway.limekayawelile.workers.dev/products/device-management">Device Management System</a></li><li><a href="https://lunanele-gateway.limekayawelile.workers.dev/products/luna-cybersecurity">Luna Cybersecurity System</a></li><li><a href="https://lunanele-gateway.limekayawelile.workers.dev/products/security-intelligence-centre">Lunanele Security Intelligence Centre</a></li></ul>
+        <a class="more" href="https://lunanele-gateway.limekayawelile.workers.dev/products">View all products &amp; pricing →</a></div>
       <div class="card"><span class="tag">Infrastructure &amp; Energy</span><h3>Lunanele Infrastructure</h3><p>Develops civil works, solar and energy systems, and long-life industrial facilities.</p></div>
       <div class="card"><span class="tag">Agriculture</span><h3>Lunanele Agribusiness</h3><p>Commercial farming, cold chain and agro-processing for South Africa's food supply.</p></div>
       <div class="card"><span class="tag">Financial Markets</span><h3>Lunanele FX Markets</h3><p>Rules-based trading within strict, pre-set risk limits.</p></div>
-    </div>
-    <p class="eyebrow" style="margin-top:56px">Products &amp; platforms</p>
-    <div class="chips">
-      <span>LunaCore</span><span>FlockSphere 360</span><span>Device Management System</span><span>Luna Cybersecurity System</span><span>Lunanele Security Intelligence Centre</span><span>SMC &amp; CRT Strategy Execution</span>
     </div>
   </div>
 </section>
