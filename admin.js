@@ -58,6 +58,22 @@ const RESOURCES = {
     },
     create: false, del: false,
   },
+  sec_assets: {
+    db: "DB", group: "Luna Cybersecurity", title: "Monitored domains", pk: "id", order: "created_at DESC",
+    list: ["id", "customer_id", "domain", "status", "last_grade", "last_score", "last_scan_at"],
+    fields: {
+      customer_id: { type: "ref", ref: "customers", required: true }, domain: { type: "text", required: true },
+      status: { type: "select", options: ["active", "paused"] },
+    },
+  },
+  sec_alerts: {
+    db: "DB", group: "Luna Cybersecurity", title: "Security alerts", pk: "id", order: "id DESC",
+    list: ["id", "created_at", "asset_id", "severity", "message"], fields: {}, create: false, del: false, readonly: true,
+  },
+  sec_portals: {
+    db: "DB", group: "Luna Cybersecurity", title: "Customer dashboard links", pk: "customer_id", order: "created_at DESC",
+    list: ["customer_id", "portal_url", "created_at"], fields: {}, create: false, del: false, readonly: true,
+  },
   entities: {
     db: "HDB", group: "Governance", title: "Companies & trusts", pk: "id", pkText: true, order: "entity_type, name",
     list: ["id", "name", "entity_type", "parent_id", "registration_no", "status"],
