@@ -74,6 +74,17 @@ const RESOURCES = {
     db: "DB", group: "Luna Cybersecurity", title: "Customer dashboard links", pk: "customer_id", order: "created_at DESC",
     list: ["customer_id", "portal_url", "created_at"], fields: {}, create: false, del: false, readonly: true,
   },
+  sec_events: {
+    db: "DB", group: "Luna Cybersecurity", title: "Security events (attacks)", pk: "id", order: "id DESC",
+    list: ["id", "created_at", "ip", "kind", "action", "country", "path"], fields: {}, create: false, del: false, readonly: true,
+  },
+  sec_ip_rules: {
+    db: "DB", group: "Luna Cybersecurity", title: "IP block / allow list", pk: "ip", pkText: true, order: "created_at DESC",
+    list: ["ip", "rule", "reason", "created_at"],
+    fields: {
+      ip: { type: "text", required: true }, rule: { type: "select", options: ["block", "allow"] }, reason: { type: "text" },
+    },
+  },
   entities: {
     db: "HDB", group: "Governance", title: "Companies & trusts", pk: "id", pkText: true, order: "entity_type, name",
     list: ["id", "name", "entity_type", "parent_id", "registration_no", "status"],
