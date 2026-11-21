@@ -1,3 +1,5 @@
+import { handleAdmin, currentUser } from "./admin.js";
+
 // Lunanele Holdings website worker.
 // Static files in /public are served automatically by Cloudflare (see wrangler.toml).
 // This worker only handles the API routes below.
@@ -8,9 +10,11 @@ const json = (data, status = 200) =>
     headers: { "Cache-Control": "no-store", "X-Content-Type-Options": "nosniff", "X-Frame-Options": "DENY" },
   });
 
-const isAdmin = (request, env) => {
+// Admin = signed-in admin session, or (for scripts) a Bearer ADMIN_TOKEN secret.
+const isAdmin = async (request, env) => {
   const auth = request.headers.get("Authorization") || "";
-  return Boolean(env.ADMIN_TOKEN) && auth === `Bearer ${env.ADMIN_TOKEN}`;
+  if (env.ADMIN_TOKEN && env.ADMIN_TOKEN.length >= 24 && auth === `Bearer ${env.ADMIN_TOKEN}`) return true;
+  return Boolean(await currentUser(request, env));
 };
 
 const clean = (v, max) => String(v ?? "").trim().slice(0, max);
@@ -39,6 +43,15 @@ async function notify(env, e) {
 export default {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
+
+    if (url.pathname === "/admin" || url.pathname.startsWith("/admin/")) {
+      try {
+        return await handleAdmin(request, env);
+      } catch (err) {
+        console.error("admin error", err);
+        return new Response("Something went wrong. Please try again.", { status: 500, headers: { "Cache-Control": "no-store" } });
+      }
+    }
 
     // POST /api/enquiry — public contact form
     if (url.pathname === "/api/enquiry" && request.method === "POST") {
@@ -88,7 +101,7 @@ export default {
 
     // GET /api/enquiries — admin only (Authorization: Bearer <ADMIN_TOKEN>)
     if (url.pathname === "/api/enquiries" && request.method === "GET") {
-      if (!isAdmin(request, env)) return json({ error: "Unauthorised" }, 401);
+      if (!(await isAdmin(request, env))) return json({ error: "Unauthorised" }, 401);
       const { results } = await env.DB.prepare(
         "SELECT * FROM enquiries ORDER BY created_at DESC LIMIT 200"
       ).all();
@@ -97,7 +110,7 @@ export default {
 
     // GET /products — admin only
     if (url.pathname === "/products" && request.method === "GET") {
-      if (!isAdmin(request, env)) return json({ error: "Unauthorised" }, 401);
+      if (!(await isAdmin(request, env))) return json({ error: "Unauthorised" }, 401);
       const { results } = await env.DB.prepare(
         "SELECT * FROM products ORDER BY updated_at DESC"
       ).all();
@@ -106,7 +119,7 @@ export default {
 
     // POST /products — admin only
     if (url.pathname === "/products" && request.method === "POST") {
-      if (!isAdmin(request, env)) return json({ error: "Unauthorised" }, 401);
+      if (!(await isAdmin(request, env))) return json({ error: "Unauthorised" }, 401);
       const b = await request.json().catch(() => ({}));
       if (!b.id || !b.name) return json({ error: "Missing required fields (id, name)" }, 400);
       await env.DB.prepare(
