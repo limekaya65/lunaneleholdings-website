@@ -12,6 +12,7 @@
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
 <meta name="theme-color" content="#050c1f">
+<meta name="ga4-id" content="">
 <meta property="og:title" content="Lunanele Holdings">
 <meta property="og:description" content="A South African holding group building long-term value across four sectors.">
 <meta property="og:image" content="https://lunaneleholdings.com/logo.jpg">
@@ -87,6 +88,8 @@ textarea{min-height:130px;resize:vertical}
 .ok h3{font-family:var(--serif);font-size:1.5rem;font-weight:500;color:var(--glint);margin-bottom:8px}
 footer{padding:40px 0;color:var(--fog);font-size:.85rem}
 footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.consent{position:fixed;left:20px;right:90px;bottom:20px;max-width:560px;background:var(--ink2);border:1px solid var(--line);border-radius:10px;padding:16px 18px;z-index:30;box-shadow:0 6px 24px rgba(0,0,0,.35);font-size:.9rem;color:var(--fog)}
+.consent div{display:flex;gap:10px;margin-top:10px}.consent .btn{padding:9px 16px;font-size:.9rem}
 .wa{position:fixed;right:20px;bottom:20px;width:54px;height:54px;border-radius:50%;background:#25d366;display:grid;place-items:center;box-shadow:0 6px 24px rgba(0,0,0,.35);z-index:20}
 </style>
 <script type="application/ld+json">
@@ -123,6 +126,10 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
         "postalCode": "0300",
         "addressCountry": "ZA"
       },
+      "areaServed": {
+        "@type": "Country",
+        "name": "South Africa"
+      },
       "contactPoint": {
         "@type": "ContactPoint",
         "contactType": "customer service",
@@ -130,6 +137,144 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
         "telephone": "+27634195979",
         "areaServed": "ZA",
         "availableLanguage": "English"
+      },
+      "subOrganization": [
+        {
+          "@id": "https://lunaneleholdings.com/#infrastructure"
+        },
+        {
+          "@id": "https://lunaneleholdings.com/#agriculture"
+        },
+        {
+          "@id": "https://lunaneleholdings.com/#financial"
+        },
+        {
+          "@id": "https://lunaneleholdings.com/#technology"
+        }
+      ]
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://lunaneleholdings.com/#infrastructure",
+      "name": "Infrastructure",
+      "description": "Civil works, solar and energy systems, and long-life industrial facilities.",
+      "parentOrganization": {
+        "@id": "https://lunaneleholdings.com/#organization"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "363 Reutlwile Zone 2, Zinniaville",
+        "addressLocality": "Rustenburg",
+        "addressRegion": "North West",
+        "postalCode": "0300",
+        "addressCountry": "ZA"
+      },
+      "url": "https://lunaneleholdings.com/#group"
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://lunaneleholdings.com/#agriculture",
+      "name": "Agriculture",
+      "description": "Commercial farming, cold chain and agro-processing for South Africa's food supply.",
+      "parentOrganization": {
+        "@id": "https://lunaneleholdings.com/#organization"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "363 Reutlwile Zone 2, Zinniaville",
+        "addressLocality": "Rustenburg",
+        "addressRegion": "North West",
+        "postalCode": "0300",
+        "addressCountry": "ZA"
+      },
+      "url": "https://lunaneleholdings.com/#group"
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://lunaneleholdings.com/#financial",
+      "name": "Financial",
+      "description": "Investment structuring, treasury and funding for the growth of every group company.",
+      "parentOrganization": {
+        "@id": "https://lunaneleholdings.com/#organization"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "363 Reutlwile Zone 2, Zinniaville",
+        "addressLocality": "Rustenburg",
+        "addressRegion": "North West",
+        "postalCode": "0300",
+        "addressCountry": "ZA"
+      },
+      "url": "https://lunaneleholdings.com/#group"
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://lunaneleholdings.com/#technology",
+      "name": "Technology & Software",
+      "description": "Platforms, security and systems that run the group and serve its clients.",
+      "parentOrganization": {
+        "@id": "https://lunaneleholdings.com/#organization"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "363 Reutlwile Zone 2, Zinniaville",
+        "addressLocality": "Rustenburg",
+        "addressRegion": "North West",
+        "postalCode": "0300",
+        "addressCountry": "ZA"
+      },
+      "url": "https://tech.lunaneleholdings.com/",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Technology products",
+        "url": "https://tech.lunaneleholdings.com/products",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "SoftwareApplication",
+              "name": "LunaCore",
+              "applicationCategory": "BusinessApplication",
+              "url": "https://tech.lunaneleholdings.com/products/lunacore"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "SoftwareApplication",
+              "name": "FlockSphere 360",
+              "applicationCategory": "BusinessApplication",
+              "url": "https://tech.lunaneleholdings.com/products/flocksphere-360"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "SoftwareApplication",
+              "name": "Device Management System",
+              "applicationCategory": "BusinessApplication",
+              "url": "https://tech.lunaneleholdings.com/products/device-management"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "SoftwareApplication",
+              "name": "Luna Cybersecurity System",
+              "applicationCategory": "BusinessApplication",
+              "url": "https://tech.lunaneleholdings.com/products/luna-cybersecurity"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "SoftwareApplication",
+              "name": "Lunanele Security Intelligence Centre",
+              "applicationCategory": "BusinessApplication",
+              "url": "https://tech.lunaneleholdings.com/products/security-intelligence-centre"
+            }
+          }
+        ]
       }
     },
     {
@@ -138,7 +283,10 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
       "name": "Lunanele Holdings",
       "alternateName": "Lunanele Holdings Pty Ltd",
       "url": "https://lunaneleholdings.com/",
-      "publisher": { "@id": "https://lunaneleholdings.com/#organization" }
+      "publisher": {
+        "@id": "https://lunaneleholdings.com/#organization"
+      },
+      "inLanguage": "en-ZA"
     }
   ]
 }
@@ -242,9 +390,14 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
 <footer>
   <div class="wrap">
     <span>© 2026 Lunanele Holdings Pty Ltd · CIPC Reg. 2025/777178/07 · Republic of South Africa</span>
-    <span>Personal information is handled under POPIA and used only to respond to your enquiry.</span>
+    <span>Personal information is handled under POPIA and used only to respond to your enquiry. Visit statistics (Google Analytics) are collected only if you allow them. <a href="#" id="consent-reset">Change choice</a></span>
   </div>
 </footer>
+
+<div class="consent" id="consent" hidden>
+  <p>May we use Google Analytics to count visits and see which pages help people reach us? No advertising, no selling of data.</p>
+  <div><button class="btn" type="button" data-consent="yes">Allow</button><button class="btn ghost" type="button" data-consent="no">No thanks</button></div>
+</div>
 
 <a class="wa" href="https://wa.me/27634195979" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
   <svg width="28" height="28" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A9.8 9.8 0 1 1 12 21.8zm0-21.6A11.8 11.8 0 0 0 1.9 18l-1.7 6 6.2-1.6A11.8 11.8 0 1 0 12 .2z"/></svg>
