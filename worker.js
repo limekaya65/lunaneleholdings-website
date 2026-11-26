@@ -40,7 +40,7 @@ async function notify(env, e) {
   }
 }
 
-// Luna Cybersecurity's free check and its linked pages live on the lunanele-gateway
+// Luna Cybersecurity's free check, customer accounts (/app) and linked pages live on the lunanele-gateway
 // Worker. Serving them here keeps visitors on lunaneleholdings.com, which is the
 // address on the flyer and QR code. The gateway sees the original URL, so links it
 // builds (such as emailed report links) also use lunaneleholdings.com.
@@ -49,7 +49,7 @@ const GATEWAY_PATHS = new Set(["/security", "/quote", "/pricing", "/privacy", "/
 
 function isGatewayPath(pathname) {
   const p = pathname.replace(/\/+$/, "") || "/";
-  return GATEWAY_PATHS.has(p) || p.startsWith("/security/");
+  return GATEWAY_PATHS.has(p) || p.startsWith("/security/") || p === "/app" || p.startsWith("/app/");
 }
 
 async function toGateway(request, env, url) {
