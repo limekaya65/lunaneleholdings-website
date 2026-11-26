@@ -40,9 +40,36 @@ async function notify(env, e) {
   }
 }
 
+// Luna Cybersecurity's free check and its linked pages live on the lunanele-gateway
+// Worker. Serving them here keeps visitors on lunaneleholdings.com, which is the
+// address on the flyer and QR code. The gateway sees the original URL, so links it
+// builds (such as emailed report links) also use lunaneleholdings.com.
+const GATEWAY_ORIGIN = "https://lunanele-gateway.limekayawelile.workers.dev";
+const GATEWAY_PATHS = new Set(["/security", "/quote", "/pricing", "/privacy", "/terms"]);
+
+function isGatewayPath(pathname) {
+  const p = pathname.replace(/\/+$/, "") || "/";
+  return GATEWAY_PATHS.has(p) || p.startsWith("/security/");
+}
+
+async function toGateway(request, env, url) {
+  if (env.GATEWAY) return env.GATEWAY.fetch(request);
+  // Without the service binding, send the visitor to the gateway directly.
+  return Response.redirect(GATEWAY_ORIGIN + url.pathname + url.search, 302);
+}
+
 export default {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
+
+    if (isGatewayPath(url.pathname)) {
+      try {
+        return await toGateway(request, env, url);
+      } catch (err) {
+        console.error("gateway proxy error", err);
+        return Response.redirect(GATEWAY_ORIGIN + url.pathname + url.search, 302);
+      }
+    }
 
     if (url.pathname === "/admin" || url.pathname.startsWith("/admin/")) {
       try {
