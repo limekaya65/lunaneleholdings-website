@@ -24,5 +24,11 @@ database_id = "6e0459e1-58c1-4045-ad4a-b1bf98474ce6"
 binding = "EMAILER"
 service = "lunanele-email"
 
+# Serves Luna Cybersecurity's free check at lunaneleholdings.com/security
+# (also /quote, /pricing, /privacy, /terms) from the lunanele-gateway Worker.
+[[services]]
+binding = "GATEWAY"
+service = "lunanele-gateway"
+
 [observability]
 enabled = true
