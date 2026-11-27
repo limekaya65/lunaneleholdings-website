@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en-ZA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Infrastructure | Civil, Energy &amp; Industrial</title>
+<meta name="description" content="Civil works, solar and energy systems, and industrial facilities in the North West and across South Africa. A Lunanele Holdings company.">
+<link rel="canonical" href="https://lunaneleholdings.com/infrastructure/">
+<meta name="theme-color" content="#10171c">
+<meta property="og:title" content="Infrastructure | Lunanele Holdings"><meta property="og:description" content="Civil works, solar and energy systems, and industrial facilities in the North West and across South Africa. A Lunanele Holdings company."><meta property="og:image" content="https://lunaneleholdings.com/logo.jpg">
+<link rel="icon" href="/favicon.ico" sizes="48x48"><link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><meta name="ga4-id" content="G-3S1HQHGB6S">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* VOICE: Infrastructure, a Lunanele Holdings company: calm, credible, plain-spoken.
+   IDEA: a sister of the Holdings site: same type, nav, facts row, cards and enquiry form.
+   PICTURE: one scene from the subsidiary's own world.
+   COLOUR and TYPE: its own palette (#10171c / #e07a2e); Playfair Display + Inter like Holdings.
+   LAYOUT: hero (split), sector sections, how to engage, contact, footer. */
+:root{color-scheme:dark;--bg:#10171c;--bg2:#172229;--ink:#eaf0f2;--fog:#93a3ad;--acc:#e07a2e;--acc2:#f2a65a;--on:#10171c;--line:rgba(224,122,46,.24);--navbg:color-mix(in srgb,#10171c 92%,transparent);--glow:radial-gradient(ellipse at 75% 0%,color-mix(in srgb,#e07a2e 14%,transparent),transparent 60%);--serif:'Playfair Display',Georgia,serif;--sans:'Inter',system-ui,sans-serif}
+
+*{box-sizing:border-box;margin:0;padding:0;min-width:0}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{background:var(--bg);color:var(--ink);font:400 16px/1.7 var(--sans);-webkit-font-smoothing:antialiased;overflow-x:clip}
+a{color:inherit}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+h1,h2{font-family:var(--serif);font-weight:500;line-height:1.12;letter-spacing:-.015em;text-wrap:balance}
+h1{font-size:clamp(2.1rem,5vw,3.5rem)}
+h2{font-size:clamp(1.7rem,3.4vw,2.4rem);margin-bottom:14px}
+h3{font-weight:600;font-size:1.08rem;line-height:1.35}
+.eyebrow{color:var(--acc);font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;font-weight:600;margin-bottom:14px}
+.lead{color:var(--fog);font-size:1.08rem;max-width:620px}
+.btn{display:inline-block;background:var(--acc);color:var(--on);font-weight:600;padding:15px 26px;border-radius:6px;text-decoration:none;border:0;font:600 1rem var(--sans);cursor:pointer;transition:background .2s;min-height:48px}
+.btn:hover{background:var(--acc2)}
+.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.btn.ghost:hover{border-color:var(--acc)}
+:focus-visible{outline:2px solid var(--acc);outline-offset:3px}
+.private{background:var(--acc);color:var(--on);text-align:center;font-size:.9rem;font-weight:600;padding:9px 16px}
+nav{position:sticky;top:0;z-index:10;background:var(--navbg);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:68px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;line-height:1.15}
+.brand img{width:36px;height:36px;border-radius:50%;flex:none}
+.brand b{display:block;font-family:var(--serif);font-weight:500;font-size:1.15rem;white-space:nowrap}
+.brand small{display:block;color:var(--fog);font-size:.72rem;white-space:nowrap}
+nav .links{display:flex;gap:24px;align-items:center;font-size:.94rem}
+nav .links a{text-decoration:none;color:var(--fog)}
+nav .links a:hover{color:var(--ink)}
+nav .links .btn{color:var(--on);padding:10px 18px;min-height:0}
+section{padding:92px 0;border-bottom:1px solid var(--line)}
+.hero{padding:84px 0 88px;background:var(--glow)}
+.hero .grid2{display:grid;grid-template-columns:1.05fr 1fr;gap:56px;align-items:center}
+.hero.reverse .grid2{grid-template-columns:1fr 1.05fr}.hero.reverse .pic{order:-1}
+.hero p.lead{margin:22px 0 34px}
+.ctas{display:flex;gap:14px;flex-wrap:wrap}
+.pic svg{display:block;width:100%;height:auto;border-radius:14px;border:1px solid var(--line);box-shadow:0 24px 60px -30px rgba(0,0,0,.55)}
+.hero.band{padding-bottom:0}
+.hero.band .pic{margin-top:56px}.hero.band .pic svg{border-radius:0;border:0;border-top:1px solid var(--line);height:clamp(220px,32vw,380px);box-shadow:none}
+.hero.band .copy{max-width:760px}
+.facts{display:flex;gap:32px;flex-wrap:wrap;margin-top:48px;color:var(--fog);font-size:.9rem}
+.facts b{display:block;color:var(--ink);font-weight:600}
+.grid{display:grid;gap:18px;margin-top:40px}
+.g2{grid-template-columns:repeat(2,minmax(0,1fr))}.g3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.card{background:var(--bg2);border:1px solid var(--line);border-radius:10px;padding:26px}
+.card h3{font-family:var(--serif);font-weight:500;font-size:1.35rem;margin-bottom:6px}
+.card p{color:var(--fog);font-size:.97rem}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.list{list-style:none;border-top:1px solid var(--line)}
+.list li{padding:14px 0 14px 30px;border-bottom:1px solid var(--line);position:relative}
+.list li::before{content:"";position:absolute;left:4px;top:23px;width:10px;height:10px;border-radius:2px;background:var(--acc)}
+.track{list-style:none;counter-reset:t;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:0;margin-top:44px;border-top:2px solid var(--acc)}
+.track li{counter-increment:t;padding:20px 18px 0 0;position:relative}
+.track li::before{content:counter(t);position:absolute;top:-15px;left:0;width:28px;height:28px;border-radius:50%;background:var(--acc);color:var(--on);font-weight:700;font-size:.85rem;display:grid;place-items:center}
+.track b{display:block;margin:10px 0 4px}.track span{color:var(--fog);font-size:.93rem}
+.chain{list-style:none;display:flex;flex-wrap:wrap;gap:10px;margin-top:40px}
+.chain li{flex:1 1 150px;background:var(--bg2);border:1px solid var(--line);padding:18px 30px 18px 18px;font-weight:600;clip-path:polygon(0 0,calc(100% - 14px) 0,100% 50%,calc(100% - 14px) 100%,0 100%)}
+.chain li:nth-child(odd){border-color:var(--acc)}
+.aside{margin-top:26px;color:var(--fog)}.aside a{color:var(--acc)}
+.steps{counter-reset:s;display:grid;gap:18px;grid-template-columns:repeat(3,minmax(0,1fr));margin-top:40px}
+.steps div{counter-increment:s;border-top:2px solid var(--acc);padding-top:18px}
+.steps div::before{content:"Step " counter(s);color:var(--acc);font-weight:600;font-size:.85rem;display:block}
+.steps h3{margin:6px 0}.steps p{color:var(--fog);font-size:.95rem}
+.notice{border:1px solid var(--acc);border-left-width:6px;border-radius:10px;padding:28px 30px;background:var(--bg2)}
+.notice h3{font-family:var(--serif);font-weight:500;font-size:1.45rem;margin-bottom:8px}.notice p{color:var(--fog);max-width:780px}
+.prodgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:40px}
+.prod{display:block;text-decoration:none;background:var(--bg2);border:1px solid var(--line);border-radius:12px;padding:24px;transition:border-color .2s,transform .2s}
+.prod:hover{border-color:var(--acc);transform:translateY(-2px)}
+.prod small{color:var(--acc);font-weight:600;font-size:.8rem}.prod h3{margin:6px 0 4px;font-size:1.12rem}.prod p{color:var(--fog);font-size:.95rem}
+.prod.more{background:var(--acc);color:var(--on);border-color:var(--acc)}.prod.more p{color:var(--on);opacity:.85}.prod.more h3::after{content:" →"}
+.mock{background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:0 30px 70px -34px rgba(13,19,36,.45);overflow:hidden}
+.mock .bar{display:flex;align-items:center;gap:6px;padding:12px 14px;background:#eef1f8;border-bottom:1px solid var(--line)}
+.mock .bar i{width:10px;height:10px;border-radius:50%;background:#c9cfdd}.mock .bar span{margin-left:10px;background:#fff;border-radius:6px;padding:3px 12px;font-size:.8rem;color:#545e78;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.mbody{display:grid;grid-template-columns:150px 1fr;gap:24px;padding:28px;align-items:center}
+.ring{position:relative;text-align:center}.ring svg{width:150px;height:150px;display:block}
+.ring b{position:absolute;top:44px;left:0;right:0;font:600 2.4rem var(--serif);color:#0d1324}.ring small{position:absolute;top:96px;left:0;right:0;color:#545e78;font-size:.78rem}
+.checks{list-style:none;font-size:.92rem;color:#0d1324}.checks li{padding:8px 0 8px 28px;border-bottom:1px solid #e8ebf3;position:relative}
+.checks li::before{position:absolute;left:0;top:7px;width:19px;height:19px;border-radius:50%;display:grid;place-items:center;font-size:.72rem;font-weight:700;color:#fff}
+.checks .y::before{content:"✓";background:#1a9e5c}.checks .n::before{content:"!";background:#e0662e}
+.mock .cap{font-size:.78rem;color:#545e78;padding:0 28px 18px}
+.contact{display:grid;gap:48px;grid-template-columns:1fr 1.2fr;align-items:start}
+.alt{margin-top:28px;display:grid;gap:14px;font-size:.97rem}.alt a{color:var(--acc)}
+.alt small{display:block;color:var(--fog);font-size:.78rem;letter-spacing:.1em;text-transform:uppercase}
+form{background:var(--bg2);border:1px solid var(--line);border-radius:12px;padding:28px;display:grid;gap:16px}
+label{font-size:.88rem;color:var(--fog);display:grid;gap:6px}
+input,select,textarea{font:inherit;font-size:1rem;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:12px 14px;width:100%;min-height:46px}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--acc)}
+textarea{min-height:130px;resize:vertical}
+.hp{position:absolute;left:-9999px}
+#status{font-size:.95rem;min-height:1.4em}#status a{color:var(--acc);font-weight:600}
+.ok{text-align:center;padding:36px 10px}.ok h3{font-family:var(--serif);font-weight:500;font-size:1.5rem;color:var(--acc);margin-bottom:8px}
+footer{padding:40px 0;color:var(--fog);font-size:.85rem}
+footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}footer a{color:var(--acc)}
+.consent{position:fixed;left:20px;right:90px;bottom:20px;max-width:560px;background:var(--bg2);border:1px solid var(--line);border-radius:10px;padding:16px 18px;z-index:30;box-shadow:0 6px 24px rgba(0,0,0,.35);font-size:.9rem;color:var(--fog)}
+.consent div{display:flex;gap:10px;margin-top:10px}.consent .btn{padding:9px 16px;font-size:.9rem;min-height:0}
+.wa{position:fixed;right:20px;bottom:20px;width:54px;height:54px;border-radius:50%;background:#25d366;display:grid;place-items:center;box-shadow:0 6px 24px rgba(0,0,0,.35);z-index:20}
+@media(max-width:900px){.hero .grid2,.hero.reverse .grid2,.two,.contact{grid-template-columns:1fr;gap:36px}.hero.reverse .pic{order:0}.g3,.prodgrid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .track{grid-template-columns:1fr;border-top:0;border-left:2px solid var(--acc);margin-left:14px}.track li{padding:0 0 26px 30px}.track li::before{top:0;left:-15px}.track b{margin-top:2px}}
+@media(max-width:720px){nav .wrap{height:62px;padding:0 18px}nav .links a:not(.btn){display:none}.brand b{font-size:1.02rem}.brand small{display:none}.brand img{width:30px;height:30px}
+ nav .links .btn{padding:8px 14px;font-size:.88rem}section{padding:64px 0}.hero{padding:52px 0 60px}.wrap{padding:0 20px}.g2,.g3,.prodgrid,.steps{grid-template-columns:1fr}.facts{gap:22px;margin-top:36px}
+ .mbody{grid-template-columns:1fr;justify-items:center;padding:22px}.checks{width:100%}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.prod{transition:none}}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "Infrastructure", "url": "https://lunaneleholdings.com/infrastructure/", "description": "Civil works, solar and energy systems, and industrial facilities in the North West and across South Africa. A Lunanele Holdings company.", "logo": "https://lunaneleholdings.com/logo.jpg", "foundingDate": "2026", "email": "relations@lunaneleholdings.com", "telephone": "+27634195979", "address": {"@type": "PostalAddress", "streetAddress": "363 Reutlwile Zone 2, Zinniaville", "addressLocality": "Rustenburg", "addressRegion": "North West", "postalCode": "0300", "addressCountry": "ZA"}, "parentOrganization": {"@type": "Organization", "@id": "https://lunaneleholdings.com/#organization", "name": "Lunanele Holdings", "url": "https://lunaneleholdings.com/"}}</script>
+</head>
+<body>
+
+<nav><div class="wrap"><a class="brand" href="#top"><img src="/logo.jpg" alt="" width="36" height="36"><span><b>Infrastructure</b><small>A Lunanele Holdings company</small></span></a>
+<div class="links"><a href="#services">Services</a><a href="#process">How we work</a><a href="#clients">Who we serve</a><a href="/">Lunanele Holdings</a><a class="btn" href="#contact">Get in touch</a></div></div></nav>
+<header class="hero split" id="top"><div class="wrap grid2"><div class="copy"><p class="eyebrow">A Lunanele Holdings company</p><h1>Built for the next fifty years.</h1><p class="lead">We plan, build and maintain civil works, solar and energy systems, and industrial facilities across the North West and the rest of South Africa.</p>
+<div class="ctas"><a class="btn" href="#contact">Start a conversation →</a><a class="btn ghost" href="/">Part of Lunanele Holdings</a></div><div class="facts"><div><b>Est. 2026</b>100% owned by Lunanele Holdings</div><div><b>Civil · Energy · Industrial</b>Three disciplines, one team</div><div><b>Rustenburg</b>North West, South Africa</div></div></div><div class="pic"><svg viewBox="0 0 600 440" role="img" aria-label="Solar rows, a warehouse, a crane and a power pylon at dusk">
+<defs><linearGradient id="isky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#121c22"/><stop offset=".62" stop-color="#2b2520"/><stop offset="1" stop-color="#5a3518"/></linearGradient>
+<radialGradient id="isun"><stop offset="0" stop-color="#f6b062"/><stop offset=".45" stop-color="#e07a2e" stop-opacity=".7"/><stop offset="1" stop-color="#e07a2e" stop-opacity="0"/></radialGradient>
+<g id="pv"><polygon points="0,0 74,0 86,-30 12,-30" fill="#1b3448" stroke="#5f8fb4" stroke-width="1"/><line x1="6" y1="-15" x2="80" y2="-15" stroke="#5f8fb4" stroke-width=".6"/><line x1="37" y1="0" x2="49" y2="-30" stroke="#5f8fb4" stroke-width=".6"/><line x1="40" y1="0" x2="40" y2="8" stroke="#3a4a52" stroke-width="3"/></g></defs>
+<rect width="600" height="440" fill="url(#isky)"/>
+<circle cx="440" cy="268" r="150" fill="url(#isun)"/><circle cx="440" cy="268" r="34" fill="#f6b062"/>
+<g stroke="#8a9aa3" stroke-width="2" fill="none"><polyline points="84,312 120,92 156,312"/><line x1="96" y1="240" x2="144" y2="240"/><line x1="104" y1="180" x2="136" y2="180"/><line x1="96" y1="240" x2="136" y2="180"/><line x1="144" y1="240" x2="104" y2="180"/><line x1="70" y1="132" x2="170" y2="132"/><line x1="84" y1="312" x2="144" y2="240"/><line x1="156" y1="312" x2="96" y2="240"/></g>
+<g stroke="#6f7f88" stroke-width="1.2" fill="none"><path d="M70 132 Q 330 190 600 150"/><path d="M170 132 Q 380 200 600 176"/></g>
+<g stroke="#e07a2e" stroke-width="3" fill="none"><line x1="262" y1="312" x2="262" y2="112"/><line x1="226" y1="122" x2="400" y2="122"/><line x1="262" y1="112" x2="226" y2="122"/><line x1="262" y1="112" x2="400" y2="122"/><line x1="372" y1="122" x2="372" y2="196"/></g>
+<rect x="364" y="196" width="16" height="10" fill="#e07a2e"/>
+<rect x="300" y="230" width="230" height="82" fill="#1a262d"/><polygon points="290,232 415,198 540,232" fill="#25353d"/><line x1="290" y1="232" x2="415" y2="198" stroke="#f2a65a" stroke-width="2"/>
+<rect x="330" y="262" width="44" height="50" fill="#0f171b"/><rect x="392" y="262" width="44" height="50" fill="#0f171b"/><rect x="460" y="250" width="50" height="14" fill="#f2a65a" opacity=".55"/>
+<rect y="312" width="600" height="128" fill="#0c1317"/><line x1="0" y1="312" x2="600" y2="312" stroke="#e07a2e" stroke-opacity=".5"/>
+<use href="#pv" x="-30" y="352"/><use href="#pv" x="66" y="352"/><use href="#pv" x="162" y="352"/><use href="#pv" x="258" y="352"/><use href="#pv" x="354" y="352"/><use href="#pv" x="450" y="352"/><use href="#pv" x="546" y="352"/><use href="#pv" x="10" y="392"/><use href="#pv" x="106" y="392"/><use href="#pv" x="202" y="392"/><use href="#pv" x="298" y="392"/><use href="#pv" x="394" y="392"/><use href="#pv" x="490" y="392"/><use href="#pv" x="586" y="392"/><use href="#pv" x="-30" y="432"/><use href="#pv" x="66" y="432"/><use href="#pv" x="162" y="432"/><use href="#pv" x="258" y="432"/><use href="#pv" x="354" y="432"/><use href="#pv" x="450" y="432"/><use href="#pv" x="546" y="432"/></svg></div></div></header>
+
+<section id="services"><div class="wrap"><p class="eyebrow">Services</p><h2>What we build.</h2>
+<p class="lead">Every project is designed to be maintained for decades, not just handed over.</p>
+<div class="grid g2">
+ <div class="card"><h3>Civil works</h3><p>Roads and access, stormwater, earthworks and site preparation, and bulk water and sewer services.</p></div>
+ <div class="card"><h3>Solar &amp; energy</h3><p>Rooftop and ground-mounted solar, battery storage and backup power for businesses, farms and public buildings.</p></div>
+ <div class="card"><h3>Industrial facilities</h3><p>Warehouses, workshops, cold stores and agro-processing plants, from slab to roof.</p></div>
+ <div class="card"><h3>Operations &amp; maintenance</h3><p>Scheduled servicing, monitoring and repairs, so the asset keeps earning after the ribbon is cut.</p></div>
+</div></div></section>
+<section id="process"><div class="wrap"><p class="eyebrow">How we work</p><h2>One project, five stages.</h2>
+<ol class="track">
+ <li><b>Site visit &amp; scope</b><span>We walk the site with you and agree what is needed.</span></li>
+ <li><b>Design &amp; costing</b><span>Drawings, a bill of quantities and a fixed quote.</span></li>
+ <li><b>Approvals</b><span>Municipal, environmental and grid paperwork handled.</span></li>
+ <li><b>Build</b><span>Weekly progress reports with photos and spend to date.</span></li>
+ <li><b>Hand over &amp; maintain</b><span>As-built drawings, training and a maintenance plan.</span></li>
+</ol></div></section>
+<section id="clients"><div class="wrap two"><div><p class="eyebrow">Who we serve</p><h2>Clients with a long view.</h2>
+<p class="lead">We work best with owners who plan to keep what they build.</p></div>
+<ul class="list"><li>Municipalities and government departments</li><li>Mines and industrial operators</li><li>Farms and agribusinesses</li><li>Commercial property owners</li><li>Community trusts and development projects</li></ul></div></section>
+<section id="contact"><div class="wrap contact"><div><p class="eyebrow">Start a conversation</p><h2>Tell us what you have in mind.</h2>
+<p class="lead">Every enquiry is read by a principal and handled in confidence. We reply within five business days.</p>
+<div class="alt"><div><small>WhatsApp</small><a href="https://wa.me/27634195979?text=Hello,%20I&#x27;m%20reaching%20out%20from%20the%20Infrastructure%20website." target="_blank" rel="noopener">+27 63 419 5979</a></div>
+<div><small>Email</small><a href="mailto:relations@lunaneleholdings.com">relations@lunaneleholdings.com</a></div><div><small>Address</small>363 Reutlwile Zone 2, Zinniaville, Rustenburg, North West, 0300</div></div></div>
+<form id="enquiry" novalidate>
+<label>Full name<input name="name" autocomplete="name" required maxlength="120"></label>
+<label>Email<input name="email" type="email" autocomplete="email" required maxlength="200"></label>
+<label>Organisation (optional)<input name="organisation" autocomplete="organization" maxlength="160"></label>
+<label>I'm reaching out about<select name="topic"><option value="[Infrastructure] A project to price">A project to price</option><option value="[Infrastructure] Solar or backup power">Solar or backup power</option><option value="[Infrastructure] Partnership or joint venture">Partnership or joint venture</option><option value="[Infrastructure] Supplier or subcontractor">Supplier or subcontractor</option><option value="[Infrastructure] Careers">Careers</option><option value="[Infrastructure] Something else">Something else</option></select></label>
+<label>Message<textarea name="message" required maxlength="4000" placeholder="A few lines on who you are and what you need."></textarea></label>
+<input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+<button class="btn" type="submit">Send enquiry →</button><p id="status" role="status"></p></form></div></section>
+<footer><div class="wrap"><span>© 2026 Infrastructure · a wholly-owned subsidiary of <a href="/">Lunanele Holdings Pty Ltd</a> (CIPC Reg. 2025/777178/07) · Republic of South Africa</span>
+<span>Personal information is handled under POPIA and used only to respond to your enquiry. Visit statistics (Google Analytics) are collected only if you allow them. <a href="#" id="consent-reset">Change choice</a></span></div></footer>
+<a class="wa" href="https://wa.me/27634195979" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><svg width="28" height="28" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A9.8 9.8 0 1 1 12 21.8zm0-21.6A11.8 11.8 0 0 0 1.9 18l-1.7 6 6.2-1.6A11.8 11.8 0 1 0 12 .2z"/></svg></a>
+<div class="consent" id="consent" hidden><p>May we use Google Analytics to count visits and see which pages help people reach us? No advertising, no selling of data.</p><div><button class="btn" type="button" data-consent="yes">Allow</button><button class="btn ghost" type="button" data-consent="no">No thanks</button></div></div><script src="/app.js" defer></script>
+</body>
+</html>
